@@ -1,0 +1,56 @@
+{
+  "experiment": "Day 2 - Breast Cancer Diagnosis",
+  "timestamp": "2026-03-02T08:57:44.629712",
+  "dataset": {
+    "samples": 569,
+    "features": 30,
+    "class_distribution": {
+      "benign": 62.741652021089635,
+      "malignant": 37.258347978910365
+    }
+  },
+  "models": {
+    "Unpruned": {
+      "metrics": {
+        "accuracy": 0.9122807017543859,
+        "precision_benign": 0.9558823529411765,
+        "recall_benign": 0.9027777777777778,
+        "precision_malignant": 0.8478260869565217,
+        "recall_malignant": 0.9285714285714286,
+        "f1": 0.9130211893369787,
+        "auc_roc": 0.9156746031746031
+      },
+      "depth": 7,
+      "n_leaves": "19"
+    },
+    "Pre-pruned": {
+      "metrics": {
+        "accuracy": 0.9210526315789473,
+        "precision_benign": 0.9565217391304348,
+        "recall_benign": 0.9166666666666666,
+        "precision_malignant": 0.8666666666666667,
+        "recall_malignant": 0.9285714285714286,
+        "f1": 0.9215739274819479,
+        "auc_roc": 0.9163359788359788
+      },
+      "depth": 5,
+      "n_leaves": "15"
+    },
+    "CCP-pruned": {
+      "metrics": {
+        "accuracy": 0.9385964912280702,
+        "precision_benign": 0.9577464788732394,
+        "recall_benign": 0.9444444444444444,
+        "precision_malignant": 0.9069767441860465,
+        "recall_malignant": 0.9285714285714286,
+        "f1": 0.9387429907553746,
+        "auc_roc": 0.9389880952380953
+      },
+      "depth": 4,
+      "n_leaves": "8"
+    }
+  },
+  "best_model": "CCP-pruned",
+  "ccp_best_alpha": 0.005023547880690737,
+  "optimal_depth_by_cv": 5
+}
