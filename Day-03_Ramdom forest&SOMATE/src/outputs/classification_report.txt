@@ -1,0 +1,12 @@
+Clinical Evaluation Report
+==========================
+              precision    recall  f1-score   support
+
+           0       0.99      0.95      0.97       100
+           1       0.91      0.98      0.95        54
+
+    accuracy                           0.96       154
+   macro avg       0.95      0.97      0.96       154
+weighted avg       0.96      0.96      0.96       154
+
+ROC-AUC Score: 0.9881
