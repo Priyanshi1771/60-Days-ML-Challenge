@@ -1,0 +1,165 @@
+2026-03-06 20:11:20 | INFO     | ============================================================
+2026-03-06 20:11:20 | INFO     | LOADING UCI CHRONIC KIDNEY DISEASE DATASET
+2026-03-06 20:11:20 | INFO     | ============================================================
+2026-03-06 20:11:21 | WARNING  | OpenML fetch failed: Dataset with data_id 4875 not found.
+2026-03-06 20:11:21 | INFO     | Generating synthetic CKD-like dataset as fallback...
+2026-03-06 20:11:21 | INFO     | Dataset shape: (400, 25)
+2026-03-06 20:11:21 | INFO     | Features: 24
+2026-03-06 20:11:21 | INFO     | Target: classification
+2026-03-06 20:11:21 | INFO     | ------------------------------------------------------------
+2026-03-06 20:11:21 | INFO     | EXPLORATORY DATA ANALYSIS
+2026-03-06 20:11:21 | INFO     | ------------------------------------------------------------
+2026-03-06 20:11:21 | INFO     | 
+Dataset shape: (400, 25)
+2026-03-06 20:11:21 | INFO     | Total cells: 10000
+2026-03-06 20:11:21 | INFO     | Total missing: 2006 (20.1%)
+2026-03-06 20:11:21 | INFO     | 
+Class Distribution:
+2026-03-06 20:11:21 | INFO     |   ckd: 246 (61.5%)
+2026-03-06 20:11:21 | INFO     |   notckd: 154 (38.5%)
+2026-03-06 20:11:21 | INFO     | 
+Missing Values (top 10):
+2026-03-06 20:11:21 | INFO     |   ba                       :  119 ( 29.8%)
+2026-03-06 20:11:21 | INFO     |   appet                    :  115 ( 28.7%)
+2026-03-06 20:11:21 | INFO     |   sc                       :  111 ( 27.8%)
+2026-03-06 20:11:21 | INFO     |   pe                       :  110 ( 27.5%)
+2026-03-06 20:11:21 | INFO     |   dm                       :  107 ( 26.8%)
+2026-03-06 20:11:21 | INFO     |   pcc                      :  105 ( 26.2%)
+2026-03-06 20:11:21 | INFO     |   sg                       :  104 ( 26.0%)
+2026-03-06 20:11:21 | INFO     |   bu                       :   94 ( 23.5%)
+2026-03-06 20:11:21 | INFO     |   bp                       :   92 ( 23.0%)
+2026-03-06 20:11:21 | INFO     |   pot                      :   92 ( 23.0%)
+2026-03-06 20:11:22 | INFO     | Saved: 01_class_and_missing.png
+2026-03-06 20:11:23 | INFO     | Saved: 02_feature_distributions.png
+2026-03-06 20:11:23 | INFO     | ------------------------------------------------------------
+2026-03-06 20:11:23 | INFO     | PREPROCESSING & SPLITTING
+2026-03-06 20:11:23 | INFO     | ------------------------------------------------------------
+2026-03-06 20:11:23 | INFO     | Target encoded: 1=CKD, 0=Not-CKD
+2026-03-06 20:11:23 | INFO     |   CKD: 246, Not-CKD: 154
+2026-03-06 20:11:23 | INFO     | Encoded 10 categorical features
+2026-03-06 20:11:23 | INFO     | 
+Split: Train=320, Test=80
+2026-03-06 20:11:23 | INFO     |   Train CKD ratio: 0.616
+2026-03-06 20:11:23 | INFO     |   Test CKD ratio:  0.613
+2026-03-06 20:11:23 | INFO     |   After imputation — Train NaN: 0, Test NaN: 0
+2026-03-06 20:11:23 | INFO     |   Scaling applied (fit on train only)
+2026-03-06 20:11:23 | INFO     | ============================================================
+2026-03-06 20:11:23 | INFO     | TRAINING: KNN with GridSearchCV (Exhaustive)
+2026-03-06 20:11:23 | INFO     | ============================================================
+2026-03-06 20:11:23 | INFO     |   Parameter grid: 198 combinations
+2026-03-06 20:11:23 | INFO     |   With 10-fold CV: 1980 fits
+2026-03-06 20:11:28 | INFO     | 
+  GridSearch completed in 4.59s
+2026-03-06 20:11:28 | INFO     |   Best parameters:
+2026-03-06 20:11:28 | INFO     |     metric: minkowski
+2026-03-06 20:11:28 | INFO     |     n_neighbors: 7
+2026-03-06 20:11:28 | INFO     |     p: 3
+2026-03-06 20:11:28 | INFO     |     weights: uniform
+2026-03-06 20:11:28 | INFO     |   Best CV F1 (weighted): 0.8453
+2026-03-06 20:11:28 | INFO     | 
+  Top 5 Configurations:
+2026-03-06 20:11:28 | INFO     |   Rank |   K |    Weights |       Metric |  p |    CV F1 |  Train F1 |    Gap
+2026-03-06 20:11:28 | INFO     |   ----------------------------------------------------------------------
+2026-03-06 20:11:28 | INFO     |      1 |   7 |    uniform |    minkowski |  3 |   0.8453 |    0.8647 | +0.0194
+2026-03-06 20:11:28 | INFO     |      1 |   7 |   distance |    minkowski |  3 |   0.8453 |    1.0000 | +0.1547
+2026-03-06 20:11:28 | INFO     |      3 |   9 |    uniform |    minkowski |  3 |   0.8393 |    0.8637 | +0.0244
+2026-03-06 20:11:28 | INFO     |      3 |   9 |   distance |    minkowski |  3 |   0.8393 |    1.0000 | +0.1607
+2026-03-06 20:11:28 | INFO     |      5 |  21 |   distance |    minkowski |  3 |   0.8272 |    1.0000 | +0.1728
+2026-03-06 20:11:28 | INFO     | Saved: 03_gridsearch_k_landscape.png
+2026-03-06 20:11:28 | INFO     | Saved: 04_bias_variance_tradeoff.png
+2026-03-06 20:11:28 | INFO     | ============================================================
+2026-03-06 20:11:28 | INFO     | TRAINING: Baseline Models for Comparison
+2026-03-06 20:11:28 | INFO     | ============================================================
+2026-03-06 20:11:29 | INFO     |   Logistic Regression       | CV F1=0.9308 ± 0.0340 | 0.44s
+2026-03-06 20:11:31 | INFO     |   SVM (RBF)                 | CV F1=0.9082 ± 0.0580 | 0.82s
+2026-03-06 20:11:44 | INFO     |   Random Forest             | CV F1=0.8954 ± 0.0580 | 6.91s
+2026-03-06 20:11:45 | INFO     |   Decision Tree             | CV F1=0.7763 ± 0.0539 | 0.47s
+2026-03-06 20:11:46 | INFO     |   KNN (default K=5)         | CV F1=0.8083 ± 0.0853 | 1.56s
+2026-03-06 20:11:46 | INFO     | ------------------------------------------------------------
+2026-03-06 20:11:46 | INFO     | SAVING MODELS
+2026-03-06 20:11:46 | INFO     | ------------------------------------------------------------
+2026-03-06 20:11:47 | INFO     |   Saved to: c:\Users\KADIYA\Desktop\ARTH\Personal\PRI\MIT\Day - 06\models/day06_all_models.joblib
+2026-03-06 20:11:47 | INFO     | ============================================================
+2026-03-06 20:11:47 | INFO     | EVALUATION ON HELD-OUT TEST SET
+2026-03-06 20:11:47 | INFO     | ============================================================
+2026-03-06 20:11:47 | INFO     | 
+  KNN (Tuned GridSearch)
+2026-03-06 20:11:47 | INFO     |     Accuracy=0.8125 | F1=0.8144 | AUC=0.9421 | CV=0.8453±0.0456
+2026-03-06 20:11:47 | INFO     | 
+  Logistic Regression
+2026-03-06 20:11:47 | INFO     |     Accuracy=0.9250 | F1=0.9254 | AUC=0.9552 | CV=0.9308±0.0340
+2026-03-06 20:11:48 | INFO     | 
+  SVM (RBF)
+2026-03-06 20:11:48 | INFO     |     Accuracy=0.9375 | F1=0.9377 | AUC=0.9513 | CV=0.9082±0.0580
+2026-03-06 20:11:54 | INFO     | 
+  Random Forest
+2026-03-06 20:11:54 | INFO     |     Accuracy=0.9250 | F1=0.9239 | AUC=0.9562 | CV=0.8954±0.0580
+2026-03-06 20:11:54 | INFO     | 
+  Decision Tree
+2026-03-06 20:11:54 | INFO     |     Accuracy=0.7750 | F1=0.7776 | AUC=0.7808 | CV=0.7763±0.0539
+2026-03-06 20:11:54 | INFO     | 
+  KNN (default K=5)
+2026-03-06 20:11:54 | INFO     |     Accuracy=0.7875 | F1=0.7890 | AUC=0.9147 | CV=0.8083±0.0853
+2026-03-06 20:11:54 | INFO     | 
+============================================================
+2026-03-06 20:11:54 | INFO     | RANKINGS
+2026-03-06 20:11:54 | INFO     | ============================================================
+2026-03-06 20:11:54 | INFO     |      KNN (Tuned GridSearch)         | F1=0.8144 | AUC=0.9421
+2026-03-06 20:11:54 | INFO     |      KNN (default K=5)              | F1=0.7890 | AUC=0.9147
+2026-03-06 20:11:54 | INFO     |      Decision Tree                  | F1=0.7776 | AUC=0.7808
+2026-03-06 20:11:55 | INFO     | Saved: 05_confusion_matrices.png
+2026-03-06 20:11:55 | INFO     | Saved: 06_model_comparison.png
+2026-03-06 20:11:55 | INFO     | Saved: 07_roc_curves.png
+2026-03-06 20:11:55 | INFO     | ============================================================
+2026-03-06 20:11:55 | INFO     | ERROR ANALYSIS — Tuned KNN
+2026-03-06 20:11:55 | INFO     | ============================================================
+2026-03-06 20:11:55 | INFO     |   Misclassifications: 15/80 (18.8%)
+2026-03-06 20:11:55 | INFO     |   False Positives (predicted CKD, actual healthy): 1
+2026-03-06 20:11:55 | INFO     |   False Negatives (missed CKD cases):             14
+2026-03-06 20:11:55 | INFO     | 
+  Feature comparison (mean, scaled values):
+2026-03-06 20:11:55 | INFO     |     age                       | Correct=+0.133 | Error=-0.200
+2026-03-06 20:11:55 | INFO     |     bp                        | Correct=-0.025 | Error=+0.266
+2026-03-06 20:11:55 | INFO     |     sg                        | Correct=-0.130 | Error=-0.319
+2026-03-06 20:11:55 | INFO     |     al                        | Correct=+0.032 | Error=-0.008
+2026-03-06 20:11:55 | INFO     |     su                        | Correct=+0.141 | Error=+0.049
+2026-03-06 20:11:55 | INFO     |     bgr                       | Correct=-0.124 | Error=-0.034
+2026-03-06 20:11:55 | INFO     |     bu                        | Correct=-0.136 | Error=+0.286
+2026-03-06 20:11:55 | INFO     |     sc                        | Correct=-0.021 | Error=+0.327
+2026-03-06 20:11:55 | INFO     |     sod                       | Correct=+0.083 | Error=+0.048
+2026-03-06 20:11:55 | INFO     |     pot                       | Correct=-0.055 | Error=+0.131
+2026-03-06 20:11:55 | INFO     |     hemo                      | Correct=+0.171 | Error=-0.189
+2026-03-06 20:11:55 | INFO     |     pcv                       | Correct=+0.026 | Error=-0.006
+2026-03-06 20:11:55 | INFO     |     wc                        | Correct=+0.263 | Error=+0.085
+2026-03-06 20:11:55 | INFO     |     rc                        | Correct=-0.002 | Error=+0.099
+2026-03-06 20:11:55 | INFO     |     rbc                       | Correct=-0.141 | Error=-0.174
+2026-03-06 20:11:55 | INFO     |     pc                        | Correct=+0.037 | Error=+0.326
+2026-03-06 20:11:55 | INFO     |     pcc                       | Correct=-0.015 | Error=-0.071
+2026-03-06 20:11:55 | INFO     |     ba                        | Correct=-0.119 | Error=-0.102
+2026-03-06 20:11:55 | INFO     |     htn                       | Correct=-0.063 | Error=-0.073
+2026-03-06 20:11:55 | INFO     |     dm                        | Correct=-0.097 | Error=+0.100
+2026-03-06 20:11:55 | INFO     |     cad                       | Correct=-0.027 | Error=-0.064
+2026-03-06 20:11:55 | INFO     |     appet                     | Correct=+0.186 | Error=-0.200
+2026-03-06 20:11:55 | INFO     |     pe                        | Correct=+0.141 | Error=-0.316
+2026-03-06 20:11:55 | INFO     |     ane                       | Correct=-0.151 | Error=+0.049
+2026-03-06 20:11:55 | INFO     | 
+  Classification Report:
+              precision    recall  f1-score   support
+
+     Not CKD     0.6818    0.9677    0.8000        31
+         CKD     0.9722    0.7143    0.8235        49
+
+    accuracy                         0.8125        80
+   macro avg     0.8270    0.8410    0.8118        80
+weighted avg     0.8597    0.8125    0.8144        80
+
+2026-03-06 20:11:55 | INFO     | Results: c:\Users\KADIYA\Desktop\ARTH\Personal\PRI\MIT\Day - 06\outputs/day06_results.csv
+2026-03-06 20:11:55 | INFO     | Report: c:\Users\KADIYA\Desktop\ARTH\Personal\PRI\MIT\Day - 06\outputs/day06_report.txt
+2026-03-06 20:11:55 | INFO     | 
+============================================================
+2026-03-06 20:11:55 | INFO     | ============================================================
+2026-03-06 20:11:55 | INFO     |   Total runtime: 35.67s
+2026-03-06 20:11:55 | INFO     |   Best KNN params: {'metric': 'minkowski', 'n_neighbors': 7, 'p': 3, 'weights': 'uniform'}
+2026-03-06 20:11:55 | INFO     |   Best model: SVM (RBF)
+2026-03-06 20:11:55 | INFO     |   Best F1: 0.9377
+2026-03-06 20:11:55 | INFO     | ============================================================
