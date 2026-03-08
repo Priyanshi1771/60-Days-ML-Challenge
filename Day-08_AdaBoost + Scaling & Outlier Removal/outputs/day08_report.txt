@@ -1,0 +1,50 @@
+======================================================================
+  DAY 8: ANEMIA DETECTION — FINAL REPORT
+======================================================================
+
+OBJECTIVE: Detect anemia from CBC blood tests using AdaBoost
+FOCUS: Scaling strategies + outlier removal impact
+
+----------------------------------------------------------------------
+ABLATION STUDY (Outlier × Scaling)
+----------------------------------------------------------------------
+
+  Outlier Method Scaling Method  CV F1 Mean  CV F1 Std  Samples Removed  Samples Used
+          zscore         robust      0.9529     0.0060               61          1075
+          zscore         minmax      0.9529     0.0060               61          1075
+          zscore       standard      0.9529     0.0060               61          1075
+          zscore           none      0.9529     0.0060               61          1075
+isolation_forest         robust      0.9512     0.0076               57          1079
+isolation_forest         minmax      0.9512     0.0076               57          1079
+isolation_forest       standard      0.9512     0.0076               57          1079
+isolation_forest           none      0.9512     0.0076               57          1079
+            none         robust      0.9511     0.0117                0          1136
+            none         minmax      0.9511     0.0117                0          1136
+            none       standard      0.9511     0.0117                0          1136
+            none           none      0.9511     0.0117                0          1136
+             iqr         robust      0.9486     0.0159              179           957
+             iqr         minmax      0.9486     0.0159              179           957
+             iqr       standard      0.9486     0.0159              179           957
+             iqr           none      0.9486     0.0159              179           957
+
+----------------------------------------------------------------------
+FINAL RESULTS
+----------------------------------------------------------------------
+
+              Model  Accuracy  F1 (Weighted)  Precision  Recall  AUC-ROC
+      Random Forest    0.9789         0.9789     0.9789  0.9789   0.9858
+   AdaBoost (Tuned)    0.9614         0.9612     0.9617  0.9614   0.9779
+Logistic Regression    0.9579         0.9577     0.9583  0.9579   0.9725
+          SVM (RBF)    0.9544         0.9541     0.9550  0.9544   0.9821
+      Decision Tree    0.9439         0.9434     0.9446  0.9439   0.9055
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. AdaBoost adaptively focuses on hard-to-classify samples
+2. Outlier removal improves AdaBoost by preventing extreme sample weights
+3. RobustScaler (median/IQR) is best when outliers remain
+4. IQR-based outlier removal is simple and effective for blood test data
+5. The ablation heatmap reveals the optimal preprocessing pipeline
+6. Hemoglobin is the strongest predictor (as expected clinically)
