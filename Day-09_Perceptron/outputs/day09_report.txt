@@ -1,0 +1,29 @@
+======================================================================
+  DAY 9: HEPATITIS DIAGNOSIS — FINAL REPORT
+======================================================================
+
+OBJECTIVE: Diagnose hepatitis outcome using Perceptron
+FOCUS: ROC curve analysis + threshold optimization
+DATASET: UCI Hepatitis (155 samples, 19 features, ~20% Die)
+
+----------------------------------------------------------------------
+RESULTS
+----------------------------------------------------------------------
+
+                  Model  Accuracy  F1 (Weighted)  Precision  Recall  AUC-ROC
+Perceptron (Calibrated)    0.9355         0.9303     0.9403  0.9355   1.0000
+    Logistic Regression    1.0000         1.0000     1.0000  1.0000   1.0000
+          Random Forest    0.9355         0.9303     0.9403  0.9355   1.0000
+              SVM (RBF)    0.9677         0.9666     0.9690  0.9677   0.9933
+         MLP (1 hidden)    0.1935         0.0628     0.0375  0.1935   0.5733
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. ROC curves evaluate models ACROSS ALL thresholds — not just 0.5
+2. AUC is threshold-independent: separates model quality from cutoff choice
+3. Youden's J finds the optimal operating point on the ROC curve
+4. Perceptron is limited to linear boundaries — Day 10 fixes this with DL
+5. Bootstrap CI shows how stable the AUC estimate is on small datasets
+6. In hepatitis: FN (miss a death) > FP (false alarm) — optimize recall
