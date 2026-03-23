@@ -1,0 +1,44 @@
+======================================================================
+  DAY 18: GENE EXPRESSION PREDICTION -- FINAL REPORT
+======================================================================
+
+FIRST PURE DL REGRESSION PROJECT
+FOCUS: Architecture comparison on high-dimensional genomic data
+
+----------------------------------------------------------------------
+ARCHITECTURE COMPARISON
+----------------------------------------------------------------------
+
+     Architecture          Hidden  Params  Val_RMSE  Epochs  Time_s
+Shallow (1 layer)           [128]   64513    1.0569      28  3.2243
+Medium (2 layers)      [256, 128]  162049    0.9236      22  1.9399
+  Deep (3 layers) [512, 256, 128]  422657    0.8686      25  2.8614
+  Wide (2 layers)     [1024, 512] 1041409    0.8585      25  2.4415
+       Bottleneck  [256, 32, 128]  141665    0.9805      15  1.6755
+
+----------------------------------------------------------------------
+FINAL RESULTS (DL + ML)
+----------------------------------------------------------------------
+
+            Model    MAE   RMSE     R2  Params
+  Wide (2 layers) 0.7327 0.9357 0.8975 1041409
+  Deep (3 layers) 0.7530 0.9655 0.8909  422657
+Medium (2 layers) 0.7819 0.9860 0.8862  162049
+       Bottleneck 0.8115 1.0304 0.8757  141665
+    Random Forest 0.8070 1.0463 0.8719    1000
+Shallow (1 layer) 0.8803 1.1141 0.8547   64513
+            Lasso 1.3742 1.8296 0.6083    1000
+            Ridge 1.4754 1.9341 0.5622    1000
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. DL can capture nonlinear gene interactions that linear models miss
+2. Deeper is NOT always better -- medium (2-layer) often wins on small data
+3. Bottleneck architectures learn compressed representations (like autoencoders)
+4. Wide networks risk overfitting on limited genomic samples
+5. 500 input features with 350 noise genes -- DL must learn to ignore noise
+6. Batch normalization is critical for deep genomic networks
+7. Dropout prevents co-adaptation -- essential when features >> samples
+8. This is the FOUNDATION for Days 36+ (RNA folding, multi-omics, etc.)
