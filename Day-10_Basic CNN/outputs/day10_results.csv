@@ -1,0 +1,2 @@
+Model,Accuracy,F1 (Weighted),Precision,Recall,AUC-ROC
+Custom CNN,0.9659,0.9659,0.9659,0.9659,0.9947
