@@ -1,0 +1,17 @@
+======================================================================
+  DAY 19: RADIOSENSITIVITY PREDICTION
+======================================================================
+
+FOCUS: Elastic Net + Cross-Dataset Validation
+
+                    Model     R2   RMSE    MAE
+    ElasticNet (within_A) 0.6078 0.0746 0.0595
+GPU Neural Net (within_A) 0.5832 0.0769 0.0608
+    ElasticNet (within_B) 0.4975 0.1033 0.0837
+ElasticNet (cross_A_to_B) 0.0717 0.1408 0.1144
+
+KEY TAKEAWAYS:
+1. Cross-dataset performance always drops due to domain shift
+2. Elastic Net balances L1 selection + L2 stability
+3. Cell line models may not generalize to clinical tumors
+4. l1_ratio controls the L1/L2 balance
