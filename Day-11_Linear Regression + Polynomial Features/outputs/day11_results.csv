@@ -1,0 +1,5 @@
+Model,MAE,RMSE,R²,MSE
+Poly Degree 2 (Ridge),0.0223,0.0282,0.9829,0.0008
+Poly Degree 1 (Ridge),0.0292,0.0383,0.9686,0.0015
+GPU Neural Net,0.0434,0.0533,0.9389,0.0028
+Poly Degree 3 (Ridge),0.0411,0.0561,0.9325,0.0031

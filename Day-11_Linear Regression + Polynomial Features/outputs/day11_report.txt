@@ -1,0 +1,30 @@
+======================================================================
+  DAY 11: ICU MORTALITY PREDICTION — FINAL REPORT
+======================================================================
+
+PHASE 2 BEGINS: Regression & Time-Series
+
+OBJECTIVE: Predict ICU mortality risk score using regression
+FOCUS: Polynomial features + regression metrics (MAE, RMSE, R²)
+
+----------------------------------------------------------------------
+RESULTS
+----------------------------------------------------------------------
+
+                Model    MAE   RMSE     R²    MSE
+Poly Degree 2 (Ridge) 0.0223 0.0282 0.9829 0.0008
+Poly Degree 1 (Ridge) 0.0292 0.0383 0.9686 0.0015
+       GPU Neural Net 0.0434 0.0533 0.9389 0.0028
+Poly Degree 3 (Ridge) 0.0411 0.0561 0.9325 0.0031
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. Polynomial features capture nonlinear relationships in linear models
+2. Degree 2 is usually the sweet spot — degree 3+ causes feature explosion
+3. Ridge regularization is essential to prevent poly overfitting
+4. RMSE penalizes large errors more than MAE
+5. R² measures proportion of variance explained (1.0 = perfect)
+6. Residual plots reveal systematic prediction errors
+7. GPU neural net can capture arbitrary nonlinearities without manual features
