@@ -1,0 +1,15 @@
+======================================================================
+  DAY 20: VIRAL LOAD FORECASTING
+======================================================================
+
+FOCUS: LSTM vs GRU sequential modeling on GPU
+
+Model    MAE   RMSE     R2
+  GRU 0.0650 0.1451 0.9346
+ LSTM 0.0712 0.1458 0.9339
+
+KEY TAKEAWAYS:
+1. LSTM and GRU both capture treatment response decay patterns
+2. GRU has fewer params but often matches LSTM
+3. Viral rebound is the hardest pattern to predict
+4. Phase 2 complete! 10/10 regression projects done!
