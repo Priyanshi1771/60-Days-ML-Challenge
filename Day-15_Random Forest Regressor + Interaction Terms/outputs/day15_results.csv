@@ -1,0 +1,5 @@
+Model,MAE,RMSE,R²,Category Acc
+Ridge (α=1.0),0.6648,0.8330,0.9759,87.6364
+GradientBoosting,0.7080,0.8847,0.9728,86.7273
+Random Forest (Tuned),0.7583,0.9622,0.9678,85.4545
+GPU Neural Net,0.9294,1.1558,0.9536,83.6364

@@ -1,0 +1,63 @@
+2026-03-15 19:37:49 | INFO     | ============================================================
+2026-03-15 19:37:49 | INFO     | LOADING OBESITY / BMI DATASET
+2026-03-15 19:37:49 | INFO     | ============================================================
+2026-03-15 19:37:50 | INFO     | Generated 5500 patients | 25 raw features
+2026-03-15 19:37:50 | INFO     | BMI: mean=26.5, std=5.4, range=[14.0, 45.1]
+2026-03-15 19:37:50 | INFO     | ------------------------------------------------------------
+2026-03-15 19:37:50 | INFO     | EDA
+2026-03-15 19:37:50 | INFO     | ------------------------------------------------------------
+2026-03-15 19:37:56 | INFO     | Saved: 01_eda.png
+2026-03-15 19:37:56 | INFO     | ------------------------------------------------------------
+2026-03-15 19:37:56 | INFO     | FEATURE ENGINEERING — Interaction Terms
+2026-03-15 19:37:56 | INFO     | ------------------------------------------------------------
+2026-03-15 19:37:56 | INFO     |   Created: waist_cm/hip_cm                     + waist_cm×hip_cm
+2026-03-15 19:37:56 | INFO     |   Created: weight_kg/height_cm                 + weight_kg×height_cm
+2026-03-15 19:37:56 | INFO     |   Created: calories_daily/exercise_hrs_week    + calories_daily×exercise_hrs_week
+2026-03-15 19:37:56 | INFO     |   Created: sedentary_hrs_day/exercise_hrs_week + sedentary_hrs_day×exercise_hrs_week
+2026-03-15 19:37:56 | INFO     |   Created: fat_g/protein_g                     + fat_g×protein_g
+2026-03-15 19:37:56 | INFO     |   Created: age/exercise_hrs_week               + age×exercise_hrs_week
+2026-03-15 19:37:56 | INFO     |   Created: waist_cm/chest_cm                   + waist_cm×chest_cm
+2026-03-15 19:37:56 | INFO     |   Created: abdomen_cm/height_cm                + abdomen_cm×height_cm
+2026-03-15 19:38:12 | INFO     | 
+  Quick comparison (RF, 100 trees):
+2026-03-15 19:38:12 | INFO     |     Raw features only:      R² = 0.9417  (25 features)
+2026-03-15 19:38:12 | INFO     |     With interactions:       R² = 0.9666  (41 features)
+2026-03-15 19:38:12 | INFO     |     Improvement:             +0.0249
+2026-03-15 19:38:20 | INFO     | Saved: 02_interaction_impact.png
+2026-03-15 19:38:20 | INFO     | Split: Train=4400 | Test=1100 | Features=41
+2026-03-15 19:38:20 | INFO     | ============================================================
+2026-03-15 19:38:20 | INFO     | RANDOM FOREST REGRESSOR — GridSearchCV
+2026-03-15 19:38:20 | INFO     | ============================================================
+2026-03-15 19:42:27 | INFO     |   Done in 247.3s
+2026-03-15 19:42:27 | INFO     |   Best params: {'max_depth': None, 'min_samples_leaf': 2, 'n_estimators': 300}
+2026-03-15 19:42:27 | INFO     |   Best CV RMSE: 1.0038
+2026-03-15 19:42:28 | INFO     | Saved: 03_rf_analysis.png
+2026-03-15 19:42:28 | INFO     | ============================================================
+2026-03-15 19:42:28 | INFO     | BASELINES
+2026-03-15 19:42:28 | INFO     | ============================================================
+2026-03-15 19:43:02 | INFO     |   GradientBoosting          | RMSE=0.9509 | 34.4s
+2026-03-15 19:43:02 | INFO     | ============================================================
+2026-03-15 19:43:02 | INFO     | GPU NEURAL NET (device=cpu)
+2026-03-15 19:43:02 | INFO     | ============================================================
+2026-03-15 19:43:06 | INFO     |   Epoch  10 | Train: 119.4930 | Val: 91.0397
+2026-03-15 19:43:07 | INFO     |   Epoch  20 | Train: 9.7047 | Val: 2.8250
+2026-03-15 19:43:09 | INFO     |   Epoch  30 | Train: 8.2467 | Val: 1.4586
+2026-03-15 19:43:10 | INFO     |   Epoch  40 | Train: 7.2944 | Val: 1.7042
+2026-03-15 19:43:11 | INFO     |   Epoch  50 | Train: 6.9769 | Val: 1.2761
+2026-03-15 19:43:12 | INFO     |   Early stop at epoch 54
+2026-03-15 19:43:12 | INFO     |   Done in 7.1s | Best val MSE: 1.0975
+2026-03-15 19:43:12 | INFO     | Saved: 04_nn_training.png
+2026-03-15 19:43:13 | INFO     |   Models saved
+2026-03-15 19:43:13 | INFO     | ============================================================
+2026-03-15 19:43:13 | INFO     | EVALUATION
+2026-03-15 19:43:13 | INFO     | ============================================================
+2026-03-15 19:43:14 | INFO     | 
+============================================================
+RANKINGS
+============================================================
+2026-03-15 19:43:14 | INFO     |      GPU Neural Net            | RMSE=1.156 | R²=0.9536 | CatAcc=83.6%
+2026-03-15 19:43:14 | INFO     | Saved: 05_rf_importance.png
+2026-03-15 19:43:15 | INFO     | Saved: 06_predictions.png
+2026-03-15 19:43:15 | INFO     | Saved: 07_bmi_categories.png
+2026-03-15 19:43:15 | INFO     | Saved: 08_comparison.png
+
