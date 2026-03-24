@@ -1,0 +1,28 @@
+======================================================================
+  DAY 17: HOSPITAL READMISSION RISK — FINAL REPORT
+======================================================================
+
+FOCUS: Time-based splits + deployment reality for healthcare ML
+
+----------------------------------------------------------------------
+TEMPORAL vs RANDOM SPLIT COMPARISON
+----------------------------------------------------------------------
+
+  Temporal (correct)        | AUC=0.6450 | F1=0.5515
+  Random (leaky!)           | AUC=0.6545 | F1=0.5653
+
+----------------------------------------------------------------------
+FINAL RESULTS (Temporal Split)
+----------------------------------------------------------------------
+
+              Model  Accuracy     F1  Precision  Recall  AUC-ROC  Avg Precision
+Logistic Regression    0.6065 0.5500     0.5095  0.5975   0.6458         0.5391
+      Random Forest    0.6230 0.5357     0.5311  0.5404   0.6376         0.5289
+     GPU Neural Net    0.5940 0.5360     0.4963  0.5826   0.6229         0.5159
+  Gradient Boosting    0.6220 0.4960     0.5353  0.4621   0.6217         0.5090
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. TEMPORAL SPLIT is mandatory for healthcare deployment models
