@@ -1,0 +1,91 @@
+2026-03-08 19:40:07 | INFO     | ============================================================
+2026-03-08 19:40:07 | INFO     | LOADING ANEMIA DETECTION DATASET
+2026-03-08 19:40:07 | INFO     | ============================================================
+2026-03-08 19:40:07 | INFO     | Generating realistic anemia blood test dataset...
+2026-03-08 19:40:07 | INFO     | Dataset shape: (1421, 9)
+2026-03-08 19:40:07 | INFO     | ------------------------------------------------------------
+2026-03-08 19:40:07 | INFO     | EXPLORATORY DATA ANALYSIS
+2026-03-08 19:40:07 | INFO     | ------------------------------------------------------------
+2026-03-08 19:40:07 | INFO     | Samples: 1421 | Features: 8
+2026-03-08 19:40:07 | INFO     | Missing: 0
+2026-03-08 19:40:07 | INFO     |   Not Anemic: 872 (61.4%)
+2026-03-08 19:40:07 | INFO     |   Anemic: 549 (38.6%)
+2026-03-08 19:40:07 | INFO     | 
+Feature Statistics:
+2026-03-08 19:40:07 | INFO     |   Hemoglobin        : mean=   12.51 | std=   2.87 | range=[2.0, 20.5] | outliers=14
+2026-03-08 19:40:07 | INFO     |   MCH               : mean=   27.40 | std=   4.02 | range=[8.0, 45.0] | outliers=34
+2026-03-08 19:40:07 | INFO     |   MCHC              : mean=   32.32 | std=   2.32 | range=[22.0, 36.8] | outliers=50
+2026-03-08 19:40:07 | INFO     |   MCV               : mean=   82.95 | std=  10.67 | range=[40.0, 125.0] | outliers=79
+2026-03-08 19:40:07 | INFO     |   RBC_count         : mean=    4.42 | std=   0.83 | range=[1.0, 8.0] | outliers=27
+2026-03-08 19:40:07 | INFO     |   WBC_count         : mean=    7.29 | std=   2.62 | range=[0.5, 35.0] | outliers=21
+2026-03-08 19:40:07 | INFO     |   Platelet_count    : mean=  259.95 | std=  74.05 | range=[20.0, 900.0] | outliers=25
+2026-03-08 19:40:09 | INFO     | Saved: 01_eda_distributions.png
+2026-03-08 19:40:09 | INFO     | Saved: 02_boxplots_outliers.png
+2026-03-08 19:40:09 | INFO     | ------------------------------------------------------------
+2026-03-08 19:40:09 | INFO     | PREPROCESSING & SPLITTING
+2026-03-08 19:40:09 | INFO     | ------------------------------------------------------------
+2026-03-08 19:40:09 | INFO     | Split: Train=1136 | Test=285
+2026-03-08 19:40:09 | INFO     |   Train anemic rate: 0.386
+2026-03-08 19:40:09 | INFO     |   Test anemic rate:  0.386
+2026-03-08 19:40:09 | INFO     | ============================================================
+2026-03-08 19:40:09 | INFO     | ABLATION STUDY: Outlier × Scaling Combinations
+2026-03-08 19:40:09 | INFO     | ============================================================
+2026-03-08 19:40:23 | INFO     |      F1 = 0.9529 ± 0.0060
+2026-03-08 19:40:23 | INFO     | Saved: 03_ablation_heatmap.png
+2026-03-08 19:40:23 | INFO     | ============================================================
+2026-03-08 19:40:23 | INFO     | TRAINING: AdaBoost with GridSearchCV
+2026-03-08 19:40:23 | INFO     | ============================================================
+2026-03-08 19:40:23 | INFO     |   Preprocessing: zscore + robust (removed 61 outliers)
+2026-03-08 19:40:40 | INFO     |   Completed in 17.5s
+2026-03-08 19:40:40 | INFO     |   Best params: {'learning_rate': 1.0, 'n_estimators': 500}
+2026-03-08 19:40:40 | INFO     |   Best CV F1: 0.9654
+2026-03-08 19:40:41 | INFO     | Saved: 04_adaboost_landscape.png
+2026-03-08 19:40:41 | INFO     | ============================================================
+2026-03-08 19:40:41 | INFO     | TRAINING: Baselines
+2026-03-08 19:40:41 | INFO     | ============================================================
+2026-03-08 19:40:41 | INFO     |   Logistic Regression       | CV F1=0.9626 ± 0.0192
+2026-03-08 19:40:44 | INFO     |   Random Forest             | CV F1=0.9739 ± 0.0171
+2026-03-08 19:40:44 | INFO     |   SVM (RBF)                 | CV F1=0.9672 ± 0.0198
+2026-03-08 19:40:44 | INFO     |   Decision Tree             | CV F1=0.9597 ± 0.0139
+2026-03-08 19:40:44 | INFO     |   Models saved: c:\60 Days\Day-08_AdaBoost + Scaling & Outlier Removal\models/day08_all_models.joblib
+2026-03-08 19:40:44 | INFO     | ============================================================
+2026-03-08 19:40:44 | INFO     | EVALUATION ON TEST SET
+2026-03-08 19:40:44 | INFO     | ============================================================
+2026-03-08 19:40:44 | INFO     |   AdaBoost (Tuned)          | Acc=0.9614 | F1=0.9612 | AUC=0.9779
+2026-03-08 19:40:44 | INFO     |   Logistic Regression       | Acc=0.9579 | F1=0.9577 | AUC=0.9725
+2026-03-08 19:40:45 | INFO     |   Random Forest             | Acc=0.9789 | F1=0.9789 | AUC=0.9858
+2026-03-08 19:40:45 | INFO     |   SVM (RBF)                 | Acc=0.9544 | F1=0.9541 | AUC=0.9821
+2026-03-08 19:40:45 | INFO     |   Decision Tree             | Acc=0.9439 | F1=0.9434 | AUC=0.9055
+2026-03-08 19:40:45 | INFO     | 
+============================================================
+RANKINGS
+============================================================
+2026-03-08 19:40:45 | INFO     |      SVM (RBF)                 | F1=0.9541 | AUC=0.9821
+2026-03-08 19:40:45 | INFO     |      Decision Tree             | F1=0.9434 | AUC=0.9055
+2026-03-08 19:40:45 | INFO     | Saved: 05_confusion_matrices.png
+2026-03-08 19:40:46 | INFO     | Saved: 06_roc_curves.png
+2026-03-08 19:40:46 | INFO     | Saved: 07_model_comparison.png
+2026-03-08 19:40:46 | INFO     | ============================================================
+2026-03-08 19:40:46 | INFO     | ERROR ANALYSIS — AdaBoost
+2026-03-08 19:40:46 | INFO     | ============================================================
+2026-03-08 19:40:46 | INFO     |   TP=102 | TN=172 | FP=3 | FN=8
+2026-03-08 19:40:46 | INFO     |   False alarms (FP): 3
+2026-03-08 19:40:46 | INFO     | 
+              precision    recall  f1-score   support
+
+  Not Anemic     0.9556    0.9829    0.9690       175
+      Anemic     0.9714    0.9273    0.9488       110
+
+    accuracy                         0.9614       285
+   macro avg     0.9635    0.9551    0.9589       285
+weighted avg     0.9617    0.9614    0.9612       285
+
+2026-03-08 19:40:46 | INFO     | Results + ablation + report saved to outputs/
+2026-03-08 19:40:46 | INFO     | 
+============================================================
+2026-03-08 19:40:46 | INFO     | ============================================================
+2026-03-08 19:40:46 | INFO     |   Runtime: 38.6s
+2026-03-08 19:40:46 | INFO     |   Best preprocessing: zscore + robust
+2026-03-08 19:40:46 | INFO     |   Best AdaBoost params: {'learning_rate': 1.0, 'n_estimators': 500}
+2026-03-08 19:40:46 | INFO     |   Best model: Random Forest | F1=0.9789
+2026-03-08 19:40:46 | INFO     | ============================================================
