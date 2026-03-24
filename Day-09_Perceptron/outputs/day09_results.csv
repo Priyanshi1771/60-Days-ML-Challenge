@@ -1,0 +1,6 @@
+Model,Accuracy,F1 (Weighted),Precision,Recall,AUC-ROC
+Perceptron (Calibrated),0.9355,0.9303,0.9403,0.9355,1.0000
+Logistic Regression,1.0000,1.0000,1.0000,1.0000,1.0000
+Random Forest,0.9355,0.9303,0.9403,0.9355,1.0000
+SVM (RBF),0.9677,0.9666,0.9690,0.9677,0.9933
+MLP (1 hidden),0.1935,0.0628,0.0375,0.1935,0.5733

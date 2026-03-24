@@ -1,0 +1,98 @@
+2026-03-09 21:01:51 | INFO     | ============================================================
+2026-03-09 21:01:51 | INFO     | LOADING UCI HEPATITIS DATASET
+2026-03-09 21:01:51 | INFO     | ============================================================
+2026-03-09 21:01:51 | WARNING  | OpenML failed: could not convert string to float: 'male'
+2026-03-09 21:01:51 | INFO     | Shape: (155, 19) | Target dist: Die=32, Live=123
+2026-03-09 21:01:51 | INFO     | ------------------------------------------------------------
+2026-03-09 21:01:51 | INFO     | EXPLORATORY DATA ANALYSIS
+2026-03-09 21:01:51 | INFO     | ------------------------------------------------------------
+2026-03-09 21:01:51 | INFO     | Total missing: 133 (4.5%)
+2026-03-09 21:01:51 | INFO     | Class dist: Die=32 (20.6%) | Live=123 (79.4%)
+2026-03-09 21:01:51 | INFO     |   Age                 :   5 missing (3.2%)
+2026-03-09 21:01:51 | INFO     |   Sex                 :   7 missing (4.5%)
+2026-03-09 21:01:51 | INFO     |   Steroid             :   5 missing (3.2%)
+2026-03-09 21:01:51 | INFO     |   Antivirals          :  12 missing (7.7%)
+2026-03-09 21:01:51 | INFO     |   Fatigue             :   4 missing (2.6%)
+2026-03-09 21:01:51 | INFO     |   Malaise             :  11 missing (7.1%)
+2026-03-09 21:01:51 | INFO     |   Anorexia            :   6 missing (3.9%)
+2026-03-09 21:01:51 | INFO     |   Liver_Big           :   5 missing (3.2%)
+2026-03-09 21:01:51 | INFO     |   Liver_Firm          :   9 missing (5.8%)
+2026-03-09 21:01:51 | INFO     |   Spleen_Palpable     :   8 missing (5.2%)
+2026-03-09 21:01:51 | INFO     |   Spiders             :   7 missing (4.5%)
+2026-03-09 21:01:51 | INFO     |   Ascites             :   7 missing (4.5%)
+2026-03-09 21:01:51 | INFO     |   Varices             :   7 missing (4.5%)
+2026-03-09 21:01:51 | INFO     |   Bilirubin           :   4 missing (2.6%)
+2026-03-09 21:01:51 | INFO     |   Alk_Phosphate       :   5 missing (3.2%)
+2026-03-09 21:01:51 | INFO     |   SGOT                :   8 missing (5.2%)
+2026-03-09 21:01:51 | INFO     |   Albumin             :   8 missing (5.2%)
+2026-03-09 21:01:51 | INFO     |   Protime             :   7 missing (4.5%)
+2026-03-09 21:01:51 | INFO     |   Histology           :   8 missing (5.2%)
+2026-03-09 21:01:52 | INFO     | Saved: 01_eda_overview.png
+2026-03-09 21:01:53 | INFO     | Saved: 02_correlation.png
+2026-03-09 21:01:53 | INFO     | ------------------------------------------------------------
+2026-03-09 21:01:53 | INFO     | PREPROCESSING & SPLITTING
+2026-03-09 21:01:53 | INFO     | ------------------------------------------------------------
+2026-03-09 21:01:53 | INFO     | Split: Train=124 | Test=31
+2026-03-09 21:01:53 | INFO     |   Train die rate: 0.210 | Test die rate: 0.194
+2026-03-09 21:01:53 | INFO     |   Imputed + scaled (float32) | Train NaN: 0
+2026-03-09 21:01:53 | INFO     | ============================================================
+2026-03-09 21:01:53 | INFO     | TRAINING: Perceptron + Calibration
+2026-03-09 21:01:53 | INFO     | ============================================================
+2026-03-09 21:01:56 | INFO     |   GridSearch: 2.9s | Best AUC: 0.9940
+2026-03-09 21:01:56 | INFO     |   Best params: {'alpha': 0.01, 'eta0': 0.5, 'max_iter': 500, 'penalty': 'elasticnet'}
+2026-03-09 21:01:56 | INFO     |   Calibrated with Platt scaling (sigmoid) for probability output
+2026-03-09 21:01:56 | INFO     | Saved: 03_perceptron_weights.png
+2026-03-09 21:01:56 | INFO     | ============================================================
+2026-03-09 21:01:56 | INFO     | TRAINING: Baselines
+2026-03-09 21:01:56 | INFO     | ============================================================
+2026-03-09 21:01:56 | INFO     |   Logistic Regression       | CV AUC=0.9899 ± 0.0155 | 0.0s
+2026-03-09 21:01:56 | INFO     |   SVM (RBF)                 | CV AUC=0.9980 ± 0.0040 | 0.0s
+2026-03-09 21:01:56 | INFO     |   Random Forest             | CV AUC=0.9779 ± 0.0392 | 0.5s
+2026-03-09 21:01:56 | INFO     |   MLP (1 hidden)            | CV AUC=0.4266 ± 0.1570 | 0.1s
+2026-03-09 21:01:57 | INFO     |   Saved (compressed): c:\60 Days\Day-09_Perceptron\models/day09_models.joblib
+2026-03-09 21:01:57 | INFO     | ============================================================
+2026-03-09 21:01:57 | INFO     | EVALUATION ON TEST SET
+2026-03-09 21:01:57 | INFO     | ============================================================
+2026-03-09 21:01:57 | INFO     |   Perceptron (Calibrated)      | Acc=0.9355 | F1=0.9303 | AUC=1.0000
+2026-03-09 21:01:57 | INFO     |   Logistic Regression          | Acc=1.0000 | F1=1.0000 | AUC=1.0000
+2026-03-09 21:01:57 | INFO     |   SVM (RBF)                    | Acc=0.9677 | F1=0.9666 | AUC=0.9933
+2026-03-09 21:01:57 | INFO     |   Random Forest                | Acc=0.9355 | F1=0.9303 | AUC=1.0000
+2026-03-09 21:01:57 | INFO     |   MLP (1 hidden)               | Acc=0.1935 | F1=0.0628 | AUC=0.5733
+2026-03-09 21:01:57 | INFO     | 
+============================================================
+RANKINGS (by AUC-ROC — Day 9 focus metric)
+============================================================
+2026-03-09 21:01:57 | INFO     |      SVM (RBF)                    | AUC=0.9933 | F1=0.9666
+2026-03-09 21:01:57 | INFO     |      MLP (1 hidden)               | AUC=0.5733 | F1=0.0628
+2026-03-09 21:01:57 | INFO     | ============================================================
+2026-03-09 21:01:57 | INFO     | ROC CURVE DEEP ANALYSIS
+2026-03-09 21:01:57 | INFO     | ============================================================
+2026-03-09 21:01:57 | INFO     |   Optimal threshold: 0.656 (F1=1.0000)
+2026-03-09 21:01:57 | INFO     |   Default 0.5: F1=0.9303
+2026-03-09 21:01:57 | INFO     |   Youden's J optimal: threshold=0.749, J=1.000
+2026-03-09 21:01:57 | INFO     |   Bootstrap AUC: 1.0000 (95% CI: [1.0000, 1.0000])
+2026-03-09 21:01:58 | INFO     | Saved: 04_roc_deep_analysis.png
+2026-03-09 21:01:59 | INFO     | Saved: 05_confusion_matrices.png
+2026-03-09 21:01:59 | INFO     | Saved: 06_model_comparison.png
+2026-03-09 21:01:59 | INFO     | ============================================================
+2026-03-09 21:01:59 | INFO     | ERROR ANALYSIS — Perceptron (Calibrated)
+2026-03-09 21:01:59 | INFO     | ============================================================
+2026-03-09 21:01:59 | INFO     |   TP=25 | TN=4 | FP=2 | FN=0
+2026-03-09 21:01:59 | INFO     |   FP (predicted DIE but LIVED): 2 — unnecessary intervention
+2026-03-09 21:01:59 | INFO     | 
+              precision    recall  f1-score   support
+
+         Die     1.0000    0.6667    0.8000         6
+        Live     0.9259    1.0000    0.9615        25
+
+    accuracy                         0.9355        31
+   macro avg     0.9630    0.8333    0.8808        31
+weighted avg     0.9403    0.9355    0.9303        31
+
+2026-03-09 21:01:59 | INFO     | Results + report saved
+2026-03-09 21:01:59 | INFO     | 
+============================================================
+2026-03-09 21:01:59 | INFO     | ============================================================
+2026-03-09 21:01:59 | INFO     |   Runtime: 7.4s
+2026-03-09 21:01:59 | INFO     |   Best: Perceptron (Calibrated) | AUC=1.0000
+2026-03-09 21:01:59 | INFO     | ============================================================
