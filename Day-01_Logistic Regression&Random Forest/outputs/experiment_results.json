@@ -1,0 +1,41 @@
+{
+  "experiment": "Day 1 - Heart Disease Prediction",
+  "timestamp": "2026-03-01T22:41:37.666990",
+  "dataset": {
+    "samples": 303,
+    "features": 13,
+    "class_balance": {
+      "1.0": 54.45544554455446,
+      "0.0": 45.54455445544555
+    }
+  },
+  "logistic_regression": {
+    "metrics": {
+      "accuracy": 0.7868852459016393,
+      "precision": 0.75,
+      "recall": 0.9090909090909091,
+      "f1": 0.821917808219178,
+      "auc_roc": 0.8668831168831168,
+      "avg_precision": 0.8770734985568698
+    },
+    "best_C": 0.1,
+    "cv_f1": 0.852283486494013
+  },
+  "random_forest": {
+    "metrics": {
+      "accuracy": 0.8360655737704918,
+      "precision": 0.7804878048780488,
+      "recall": 0.9696969696969697,
+      "f1": 0.8648648648648649,
+      "auc_roc": 0.9161255411255412,
+      "avg_precision": 0.9252690993847976
+    },
+    "cv_f1_mean": 0.8226103687391912,
+    "cv_f1_std": 0.06169068748566672
+  },
+  "threshold_analysis": {
+    "best_f1_threshold": 0.4268735130934259,
+    "threshold_90_recall": 0.4268735130934259,
+    "youden_threshold": 0.4268735130934259
+  }
+}

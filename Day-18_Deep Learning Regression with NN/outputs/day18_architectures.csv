@@ -1,6 +1,0 @@
-Architecture,Hidden,Params,Val_RMSE,Epochs,Time_s
-Shallow (1 layer),[128],64513,1.0569,28,3.2243
-Medium (2 layers),"[256, 128]",162049,0.9236,22,1.9399
-Deep (3 layers),"[512, 256, 128]",422657,0.8686,25,2.8614
-Wide (2 layers),"[1024, 512]",1041409,0.8585,25,2.4415
-Bottleneck,"[256, 32, 128]",141665,0.9805,15,1.6755
