@@ -1,0 +1,5 @@
+Model,MAE,RMSE,R²
+Ridge,0.2899,0.3626,0.8369
+SVR (Tuned),0.2906,0.3633,0.8363
+Random Forest,0.3318,0.4190,0.7823
+GPU Neural Net,0.7960,0.9458,-0.1092

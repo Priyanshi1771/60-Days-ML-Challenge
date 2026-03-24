@@ -1,0 +1,7 @@
+Method,cv_rmse,cv_rmse_std,cv_r2,n_features
+none,0.4530,0.0089,0.7575,40
+variance,0.5828,0.0098,0.5976,15
+correlation,0.4871,0.0143,0.7199,15
+mutual_info,0.5234,0.0122,0.6763,15
+rfecv,0.4769,0.0079,0.7311,16
+lasso,0.4676,0.0114,0.7416,15
