@@ -1,0 +1,48 @@
+======================================================================
+  DAY 5: THYROID DISEASE CLASSIFICATION — FINAL REPORT
+======================================================================
+
+OBJECTIVE: Compare Naive Bayes baseline against ensemble voting
+           classifiers (hard, soft, weighted) for multi-class
+           thyroid disease diagnosis.
+
+DATASET: UCI New Thyroid (215 samples, 5 features, 3 classes)
+         Classes: Normal, Hyperthyroid, Hypothyroid
+
+----------------------------------------------------------------------
+RESULTS (sorted by Test F1 Weighted)
+----------------------------------------------------------------------
+
+              Model  Accuracy  F1 (Weighted)  F1 (Macro)  Precision  Recall  CV F1 Mean  CV F1 Std
+        Gaussian NB    1.0000         1.0000      1.0000     1.0000  1.0000      1.0000     0.0000
+Logistic Regression    1.0000         1.0000      1.0000     1.0000  1.0000      0.9678     0.0456
+          SVM (RBF)    1.0000         1.0000      1.0000     1.0000  1.0000      0.9813     0.0287
+                KNN    1.0000         1.0000      1.0000     1.0000  1.0000      0.9757     0.0299
+        Soft Voting    1.0000         1.0000      1.0000     1.0000  1.0000      0.9869     0.0262
+        Hard Voting    1.0000         1.0000      1.0000     1.0000  1.0000      0.9734     0.0457
+    Weighted Voting    1.0000         1.0000      1.0000     1.0000  1.0000      0.9869     0.0262
+      Random Forest    0.9767         0.9760      0.9689     0.9775  0.9767      0.9805     0.0297
+
+BEST MODEL: Gaussian NB
+  Test F1 (Weighted): 1.0000
+  Test Accuracy:      1.0000
+  CV F1:              1.0000 ± 0.0000
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. Ensemble voting classifiers combine diverse models to reduce
+   individual model weaknesses.
+
+2. Soft voting (probability averaging) typically outperforms hard
+   voting (majority label) because it uses confidence information.
+
+3. Weighted voting can further improve by giving more influence to
+   better-performing base classifiers.
+
+4. Naive Bayes provides a strong baseline for this dataset due to
+   the relative independence of thyroid lab measurements.
+
+5. Model diversity is crucial — ensemble of similar models won't
+   improve much over a single model.
