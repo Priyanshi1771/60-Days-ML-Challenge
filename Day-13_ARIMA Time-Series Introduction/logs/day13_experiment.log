@@ -1,0 +1,48 @@
+2026-03-13 21:40:01 | INFO     | ============================================================
+2026-03-13 21:40:01 | INFO     | LOADING COVID-19 TIME-SERIES DATA
+2026-03-13 21:40:01 | INFO     | ============================================================
+2026-03-13 21:40:01 | INFO     | Generated 730 days | Range: [315, 25334]
+2026-03-13 21:40:01 | INFO     | ------------------------------------------------------------
+2026-03-13 21:40:01 | INFO     | EDA — TIME-SERIES ANALYSIS
+2026-03-13 21:40:01 | INFO     | ------------------------------------------------------------
+2026-03-13 21:40:01 | INFO     | Mean: 6016 | Std: 5717
+2026-03-13 21:40:01 | INFO     | Min: 315 | Max: 25334
+2026-03-13 21:40:01 | INFO     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-13 21:40:01 | INFO     | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-13 21:40:02 | INFO     | Saved: 01_eda_timeseries.png
+2026-03-13 21:40:02 | INFO     | ------------------------------------------------------------
+2026-03-13 21:40:02 | INFO     | TEMPORAL TRAIN/TEST SPLIT
+2026-03-13 21:40:02 | INFO     | ------------------------------------------------------------
+2026-03-13 21:40:02 | INFO     | ============================================================
+2026-03-13 21:40:02 | INFO     | ARIMA — Grid Search for Best (p,d,q)
+2026-03-13 21:40:02 | INFO     | ============================================================
+2026-03-13 21:40:02 | WARNING  | statsmodels not installed — skipping ARIMA
+2026-03-13 21:40:02 | INFO     | ============================================================
+2026-03-13 21:40:02 | INFO     | EXPONENTIAL SMOOTHING (Holt-Winters)
+2026-03-13 21:40:02 | INFO     | ============================================================
+2026-03-13 21:40:02 | WARNING  | statsmodels not installed — skipping ETS
+2026-03-13 21:40:02 | INFO     | LSTM data: Train=(563, 21, 1) | Test=(146, 21, 1) | Lookback=21
+2026-03-13 21:40:02 | INFO     | ============================================================
+2026-03-13 21:40:02 | INFO     | GPU LSTM (device=cpu)
+2026-03-13 21:40:02 | INFO     | ============================================================
+2026-03-13 21:40:04 | INFO     |   Epoch  10 | Train: 0.005501 | Val: 0.010480
+2026-03-13 21:40:05 | INFO     |   Early stop at epoch 16
+2026-03-13 21:40:05 | INFO     |   Done in 1.3s | Best val MSE: 0.006989
+2026-03-13 21:40:05 | INFO     | Saved: 02_lstm_training.png
+2026-03-13 21:40:05 | INFO     |   Models saved
+2026-03-13 21:40:05 | INFO     | ============================================================
+2026-03-13 21:40:05 | INFO     | EVALUATION — FORECAST ACCURACY
+2026-03-13 21:40:05 | INFO     | ============================================================
+2026-03-13 21:40:05 | INFO     |   GPU LSTM           | MAE=   621.8 | RMSE=   725.6 | MAPE= 48.9%
+2026-03-13 21:40:05 | INFO     | 
+============================================================
+RANKINGS
+============================================================
+2026-03-13 21:40:05 | INFO     | Saved: 03_forecast_comparison.png
+2026-03-13 21:40:06 | INFO     | Saved: 04_model_comparison.png
+2026-03-13 21:40:06 | INFO     | Saved: 05_zoom_forecast.png
+2026-03-13 21:40:06 | INFO     | Results saved
+2026-03-13 21:40:06 | INFO     | 
+============================================================
+2026-03-13 21:40:06 | INFO     |   Best: GPU LSTM | RMSE=725.6
+2026-03-13 21:40:06 | INFO     | ============================================================

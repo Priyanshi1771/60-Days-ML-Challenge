@@ -1,0 +1,28 @@
+======================================================================
+  DAY 13: COVID-19 CASE FORECASTING — FINAL REPORT
+======================================================================
+
+FIRST TIME-SERIES PROJECT IN THE 60-DAY CHALLENGE!
+
+OBJECTIVE: Forecast daily COVID-19 cases using ARIMA, ETS, and GPU LSTM
+DATA: 730 days of simulated pandemic data with 3 waves
+
+----------------------------------------------------------------------
+RESULTS
+----------------------------------------------------------------------
+
+   Model    MAE   RMSE  MAPE (%)
+GPU LSTM 621.79 725.62     48.89
+
+----------------------------------------------------------------------
+KEY TAKEAWAYS
+----------------------------------------------------------------------
+
+1. Time-series data MUST be split temporally — never random shuffle
+2. ARIMA(p,d,q): p=AR lags, d=differencing, q=MA errors
+3. Stationarity is required for ARIMA — differencing (d) fixes trends
+4. Weekly seasonality in COVID data (fewer weekend reports)
+5. LSTM captures complex nonlinear temporal patterns
+6. Exponential Smoothing handles trend + seasonality explicitly
+7. MAPE is the most intuitive metric for stakeholders
+8. Forecast error grows with horizon — near-term is always more accurate
