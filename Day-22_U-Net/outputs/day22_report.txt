@@ -1,0 +1,17 @@
+======================================================================
+  DAY 22: BRAIN TUMOR SEGMENTATION -- U-NET
+======================================================================
+
+FIRST SEGMENTATION PROJECT!
+
+  Dice (all)               : 0.9957
+  IoU (all)                : 0.9916
+  Dice (tumor only)        : 0.9939
+  IoU (tumor only)         : 0.9880
+
+KEY TAKEAWAYS:
+1. U-Net's skip connections preserve spatial detail lost during downsampling
+2. Dice loss handles class imbalance (tiny tumor vs large background)
+3. Dice score > 0.7 is clinically useful for tumor segmentation
+4. False negatives (missed tumor) are worse than false positives
+5. The encoder-decoder architecture generalizes to many medical imaging tasks
