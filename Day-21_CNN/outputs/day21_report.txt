@@ -1,0 +1,20 @@
+======================================================================
+  DAY 21: PNEUMONIA DETECTION -- FINAL REPORT
+======================================================================
+
+PHASE 3 BEGINS: Deep Learning & Medical Imaging!
+
+Accuracy: 0.9613 | F1: 0.9733 | AUC: 0.9918
+Precision: 0.9717 | Recall: 0.9748 | AP: 0.9968
+
+TP=619 | TN=225 | FP=18 | FN=16
+
+KEY TAKEAWAYS:
+1. 4-block CNN captures hierarchical features in chest X-rays
+2. Data augmentation (flip, rotate, translate, jitter) prevents overfitting
+3. Grayscale input (1 channel) is sufficient for X-ray classification
+4. In pneumonia detection: FN (missed) is worse than FP (false alarm)
+5. Recall is the priority metric for screening applications
+6. AdaptiveAvgPool makes the CNN flexible to different input sizes
+7. Dropout(0.5) is aggressive but needed for small medical datasets
+8. This is the foundation for Days 22-30 (segmentation, transfer learning)
