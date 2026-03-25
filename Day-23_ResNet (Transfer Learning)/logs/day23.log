@@ -1,0 +1,69 @@
+2026-03-25 12:28:03 | INFO     | ============================================================
+2026-03-25 12:28:03 | INFO     |   DAY 23: SKIN LESION CLASSIFICATION
+2026-03-25 12:28:03 | INFO     |   ResNet18 Transfer Learning -- 3 Strategies Compared
+2026-03-25 12:28:03 | INFO     |   First Transfer Learning Project!
+2026-03-25 12:28:03 | INFO     | ============================================================
+2026-03-25 12:28:03 | INFO     | ============================================================
+2026-03-25 12:28:03 | INFO     | LOADING SKIN LESION DATASET
+2026-03-25 12:28:03 | INFO     | ============================================================
+2026-03-25 12:28:03 | INFO     | Generating synthetic skin lesion images (7 classes)...
+2026-03-25 12:28:32 | INFO     | Generated 3500 skin lesion images (224x224 RGB)
+2026-03-25 12:28:32 | INFO     |   Melanocytic Nevi         : 500
+2026-03-25 12:28:32 | INFO     |   Melanoma                 : 500
+2026-03-25 12:28:32 | INFO     |   Benign Keratosis         : 500
+2026-03-25 12:28:32 | INFO     |   Basal Cell Carcinoma     : 500
+2026-03-25 12:28:32 | INFO     |   Actinic Keratosis        : 500
+2026-03-25 12:28:32 | INFO     |   Vascular Lesion          : 500
+2026-03-25 12:28:32 | INFO     |   Dermatofibroma           : 500
+2026-03-25 12:28:33 | INFO     | Saved: 01_samples.png
+2026-03-25 12:28:33 | INFO     | ------------------------------------------------------------
+2026-03-25 12:28:33 | INFO     | CREATING DATALOADERS
+2026-03-25 12:28:33 | INFO     |   Train: 2450 | Val: 525 | Test: 525
+2026-03-25 12:28:33 | INFO     | ============================================================
+2026-03-25 12:28:33 | INFO     | TRANSFER LEARNING COMPARISON (device=cuda)
+2026-03-25 12:28:33 | INFO     | ============================================================
+2026-03-25 12:28:33 | INFO     | 
+--- Strategy: SCRATCH ---
+2026-03-25 12:28:33 | INFO     |   scratch   : trainable=11,180,103 / total=11,180,103 (100.0%)
+2026-03-25 12:38:16 | INFO     |   scratch   : best_val_acc=1.0000 | epochs=25 | 582.4s
+2026-03-25 12:38:16 | INFO     | 
+--- Strategy: FROZEN ---
+2026-03-25 12:38:47 | INFO     |   frozen    : trainable=     3,591 / total=11,180,103 (0.0%)
+2026-03-25 12:46:34 | INFO     |   frozen    : best_val_acc=0.9943 | epochs=25 | 466.4s
+2026-03-25 12:46:34 | INFO     | 
+--- Strategy: FINETUNE ---
+2026-03-25 12:46:34 | INFO     |   finetune  : trainable=11,180,103 / total=11,180,103 (100.0%)
+2026-03-25 12:54:21 | INFO     |   finetune  : best_val_acc=1.0000 | epochs=19 | 466.8s
+2026-03-25 12:54:21 | INFO     | Saved: 02_strategy_comparison.png
+2026-03-25 12:54:21 | INFO     | ============================================================
+2026-03-25 12:54:21 | INFO     | EVALUATION ON TEST SET
+2026-03-25 12:54:21 | INFO     | ============================================================
+2026-03-25 12:54:23 | INFO     |   scratch    | Acc=1.0000 | F1w=1.0000 | F1m=1.0000
+2026-03-25 12:54:25 | INFO     |   frozen     | Acc=0.9924 | F1w=0.9924 | F1m=0.9920
+2026-03-25 12:54:26 | INFO     |   finetune   | Acc=1.0000 | F1w=1.0000 | F1m=1.0000
+2026-03-25 12:54:26 | INFO     | 
+--- Best Strategy: SCRATCH ---
+2026-03-25 12:54:26 | INFO     | 
+                      precision    recall  f1-score   support
+
+    Melanocytic Nevi     1.0000    1.0000    1.0000        69
+            Melanoma     1.0000    1.0000    1.0000        90
+    Benign Keratosis     1.0000    1.0000    1.0000        79
+Basal Cell Carcinoma     1.0000    1.0000    1.0000        59
+   Actinic Keratosis     1.0000    1.0000    1.0000        68
+     Vascular Lesion     1.0000    1.0000    1.0000        85
+      Dermatofibroma     1.0000    1.0000    1.0000        75
+
+            accuracy                         1.0000       525
+           macro avg     1.0000    1.0000    1.0000       525
+        weighted avg     1.0000    1.0000    1.0000       525
+
+2026-03-25 12:54:27 | INFO     | Saved: 03_confusion_matrices.png
+2026-03-25 12:54:27 | INFO     | Saved: 04_per_class.png
+2026-03-25 12:54:27 | INFO     | Saved: 05_final_comparison.png
+2026-03-25 12:54:27 | INFO     | Results saved
+2026-03-25 12:54:27 | INFO     | 
+============================================================
+2026-03-25 12:54:27 | INFO     |   DAY 23 COMPLETE | 1583.6s | Device: cuda
+2026-03-25 12:54:27 | INFO     |   Best strategy: scratch | Acc: 1.0000
+2026-03-25 12:54:27 | INFO     | ============================================================

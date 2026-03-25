@@ -1,0 +1,21 @@
+======================================================================
+  DAY 23: SKIN LESION CLASSIFICATION -- TRANSFER LEARNING
+======================================================================
+
+FIRST TRANSFER LEARNING PROJECT!
+
+3 strategies compared: scratch | frozen | finetune
+
+Strategy  Accuracy  F1 (weighted)  F1 (macro)  Time (s)
+ scratch    1.0000         1.0000      1.0000  582.3657
+finetune    1.0000         1.0000      1.0000  466.8131
+  frozen    0.9924         0.9924      0.9920  466.4414
+
+KEY TAKEAWAYS:
+1. Pretrained ResNet (finetune) usually beats training from scratch
+2. Even frozen features (trained on ImageNet) transfer to medical images
+3. Fine-tuning with low LR preserves pretrained knowledge while adapting
+4. Transfer learning needs LESS data and FEWER epochs to converge
+5. ImageNet normalization (mean/std) is required for pretrained models
+6. Per-class analysis shows transfer helps rare classes most
+7. This is the foundation for Days 24-28 (VGG, DenseNet, Inception)

@@ -1,0 +1,4 @@
+Strategy,Accuracy,F1 (weighted),F1 (macro),Time (s)
+scratch,1.0000,1.0000,1.0000,582.3657
+finetune,1.0000,1.0000,1.0000,466.8131
+frozen,0.9924,0.9924,0.9920,466.4414
