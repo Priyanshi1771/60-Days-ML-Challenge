@@ -13,30 +13,30 @@ Over the next 24 days, I am committing to daily progress in developing robust mo
 
 | Day | Focus Area | Task Completed | Resources / Code |
 | :---: | :--- | :--- | :--- |
-| **01** | Data Preprocessing | Configured GPU pipeline and applied ICA for KaraOne dataset | [View](./Day-01) |
-| **02** | Base Architecture | Designed CNN model architecture for feature extraction | [View](./Day-02) |
-| **03** | Text Analytics | Drafted n8n workflow for EHR data upload and processing | [View](./Day-03) |
-| **04** | Advanced Models | Integrated QNN components with base CNN architecture | [View](./Day-04) |
-| **05** | Image Processing | Set up OAI dataset pipeline for X-ray KL-grading | [View](./Day-05) |
-| **06** | Model Interpretability | Applied XAI techniques for model transparency | [View](./Day-06) |
-| **07** | Documentation | Drafted colorless, publication-ready architecture diagrams | [View](./Day-07) |
-| **08** | Signal Processing | Epoched EEG data and extracted frequency-domain features | [View](./Day-08) |
-| **09** | Model Training | Initiated training loop for EEG imagined speech classification | [View](./Day-09) |
-| **10** | Evaluation | Evaluated EEG model performance and tuned hyperparameters | [View](./Day-10) |
-| **11** | Image Processing | Implemented data augmentation specifically for X-ray images | [View](./Day-11) |
-| **12** | Model Training | Trained hybrid CNN+QNN pipeline for KL-Grading (0 to 4) | [View](./Day-12) |
-| **13** | 3D Modeling | Initiated 3D model building pipeline from OAI dataset | [View](./Day-13) |
-| **14** | 3D Modeling | Refined spatial feature extraction for 3D reconstruction | [View](./Day-14) |
-| **15** | Text Analytics | Integrated WebEHR API into the AI agent workflow | [View](./Day-15) |
-| **16** | Text Analytics | Refined n8n prompt logic for clinical document parsing | [View](./Day-16) |
-| **17** | System Integration | Tested end-to-end file upload and EHR text extraction | [View](./Day-17) |
-| **18** | Model Interpretability | Generated XAI visualizations for X-ray KL-Grading | [View](./Day-18) |
-| **19** | Image Formatting | Converted XAI outputs to grayscale/colorless for IEEE standards | [View](./Day-19) |
-| **20** | Pipeline Optimization | Optimized GPU memory usage across all training scripts | [View](./Day-20) |
-| **21** | Code Refactoring | Modularized Python scripts for preprocessing and training | [View](./Day-21) |
-| **22** | Research Writing | Documented methodology and results in standard IEEE format | [View](./Day-22) |
-| **23** | System Testing | Conducted final inference testing on all three pipelines | [View](./Day-23) |
-| **24** | Sprint Review | Finalized repository documentation and project summary | [View](./Day-24) |
+| **01** | Classification Models | Implemented Logistic Regression & Random Forest | [View](<./Day-01_Logistic Regression&Random Forest>) |
+| **02** | Tree-Based Models | Built Decision Tree classifiers | [View](<./Day-02_Decision Tree>) |
+| **03** | Imbalanced Data | Applied Random Forest and SMOTE for data balancing | [View](<./Day-03_Ramdom forest&SOMATE>) |
+| **04** | Support Vector Machines | Trained SVM models | [View](<./Day-04_SVM>) |
+| **05** | Model Comparison | Evaluated Logistic Regression, SVM (RBF), Random Forest, KNN | [View](<./Day-05 Logistic Regression, SVM (RBF), Random Forest, KNN>) |
+| **06** | Hyperparameter Tuning | Optimized KNN using GridSearch | [View](<./Day-06_KNN, GridSearch>) |
+| **07** | Explainable AI (XAI) | Implemented XGBoost and interpreted with SHAP | [View](<./Day-07_XGBoost + SHAP>) |
+| **08** | Data Preprocessing | Applied AdaBoost with Scaling & Outlier Removal | [View](<./Day-08_AdaBoost + Scaling & Outlier Removal>) |
+| **09** | Linear Classifiers | Implemented Perceptron algorithms | [View](<./Day-09_Perceptron>) |
+| **10** | Deep Learning Basics | Built a basic Convolutional Neural Network (CNN) | [View](<./Day-10_Basic CNN>) |
+| **11** | Regression Models | Explored Linear Regression + Polynomial Features | [View](<./Day-11_Linear Regression + Polynomial Features>) |
+| **12** | Regularization | Applied Ridge Regression and handled Multicollinearity | [View](<./Day-12_Ridge Regression + Multicollinearity Handling>) |
+| **13** | Time-Series Analysis | Introduction to ARIMA for forecasting | [View](<./Day-13_ARIMA Time-Series Introduction>) |
+| **14** | NLP & Regression | Lasso Regression + TF-IDF Text Feature Extraction | [View](<./Day-14_Lasso Regression + TF-IDF Text Feature Extraction>) |
+| **15** | Advanced Regression | Built a Random Forest Regressor incorporating Interaction Terms | [View](<./Day-15_Random Forest Regressor + Interaction Terms>) |
+| **16** | Feature Engineering | Applied SVR alongside Feature Selection Techniques | [View](<./Day-16_SVR + Feature Selection Techniques>) |
+| **17** | Time-Series Validation | Implemented Logistic Regression with Time-Based Splits | [View](<./Day-17_Logistic Regression + Time-Based Splits>) |
+| **18** | Deep Learning | Explored Regression tasks utilizing Neural Networks | [View](<./Day-18_Deep Learning Regression with NN>) |
+| **19** | Regularization | Implemented ElasticNet for improved model generalization | [View](<./Day-19_ElasticNet>) |
+| **20** | Sequence Modeling | Compared performance between LSTM and GRU architectures | [View](<./Day-20_LSTM vs GRU>) |
+| **21** | Computer Vision | Advanced application of Convolutional Neural Networks (CNN) | [View](<./Day-21_CNN>) |
+| **22** | Image Segmentation | Implemented U-Net architecture for advanced imaging tasks | [View](<./Day-22_U-Net>) |
+| **23** | Transfer Learning | Utilized pre-trained ResNet architecture for feature extraction | [View](<./Day-23_ResNet (Transfer Learning)>) |
+| **24** | Medical Informatics | *(Planned: Finalize hybrid pipeline combining CNN/QNN/XAI for clinical grading or automated text analytics)* | Upcoming |
 
 
 ## Tech Stack & Tools
